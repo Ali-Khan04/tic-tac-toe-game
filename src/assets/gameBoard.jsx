@@ -4,14 +4,15 @@ const initialBoard = [
   [null, null, null],
   [null, null, null],
 ];
-function GameBoard() {
+function GameBoard({ selectedSquare, activatedSymbol }) {
   const [originalBoard, setBoard] = useState(initialBoard);
   function handleBoard(index, colIndex) {
     setBoard((oldBoard) => {
       const updateBoard = [...oldBoard.map((innerArray) => [...innerArray])];
-      updateBoard[index][colIndex] = "X";
+      updateBoard[index][colIndex] = activatedSymbol;
       return updateBoard;
     });
+    selectedSquare();
   }
   return (
     <ol id="game-board">

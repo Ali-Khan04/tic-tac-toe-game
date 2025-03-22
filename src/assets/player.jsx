@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Player({ name, symbol }) {
+export default function Player({ name, symbol, isActive }) {
   const [editing, setEditing] = useState(false);
   const [initialName, setName] = useState(name);
   function changeName(event) {
@@ -18,8 +18,8 @@ export default function Player({ name, symbol }) {
   }
   return (
     <>
-      <ol id="players">
-        <li>
+      <ol id="players" className="highlight-player">
+        <li className={isActive ? "active" : undefined}>
           <span className="player">
             {playerEditing}
             <span className="player-symbol">{symbol}</span>
