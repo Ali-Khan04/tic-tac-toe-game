@@ -1,5 +1,6 @@
 import projectImg from "./assets/game-logo.png";
 import Player from "./assets/player";
+import GameBoard from "./assets/gameBoard";
 function App() {
   return (
     <>
@@ -10,6 +11,7 @@ function App() {
       <div id="game-container">
         <Player name="player1" symbol="X" />
         <Player name="player2" symbol="O" />
+        <GameBoard />
       </div>
     </>
   );
