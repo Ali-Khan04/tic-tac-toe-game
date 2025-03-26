@@ -1,9 +1,11 @@
 import projectImg from "./assets/game-logo.png";
 import Player from "./assets/player";
 import GameBoard from "./assets/gameBoard";
+import { WINNING_COMBINATIONS } from "./winningCombos";
 import { useState } from "react";
 function App() {
   const [activePlayer, setPlayer] = useState("X");
+  const [winner, setWinner] = useState(false);
   function handleActivePlayer() {
     setPlayer((prevActivePlayer) => (prevActivePlayer === "X" ? "O" : "X"));
   }
